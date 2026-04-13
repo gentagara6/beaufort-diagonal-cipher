@@ -27,3 +27,51 @@ if __name__=="__main__":
     print(f"Key        : {key}")
     encrypted =encrypt_beaufort(plaintext,key)
     print(f"Beaufort   : {encrypted}")
+
+
+def dekriptimi_beaufort(ciphertext, key):
+    
+    plaintext = ""
+
+    ciphertext = ciphertext.upper()
+    key = key.upper()
+
+    key_index = 0  
+
+    for char in ciphertext:
+        if char.isalpha():
+            c_val = ord(char) - ord('A')
+            k_val = ord(key[key_index % len(key)])- ord('A')
+
+            m_val = (k_val - c_val) % 26
+
+            plaintext += chr(m_val + ord('A'))
+
+            key_index += 1
+        else:
+            plaintext += char
+
+    return plaintext
+
+
+def main():
+    print("--- Moduli i Dekriptimit Beaufort ---")
+
+    teksti = input("Shkruani tekstin per dekriptim: ")
+    celesi = input("Shkruani celesin: ")
+
+    if not celesi.isalpha():
+        print("Gabim: Celesi duhet te permbaje vetem shkronja!")
+        return
+
+    rezultati = dekriptimi_beaufort(teksti, celesi)
+
+    print("\n---------------------------")
+    print(f"Teksti i shifruar: {teksti}")
+    print(f"Celesi i perdorur: {celesi}")
+    print(f"Teksti i dekriptuar: {rezultati}")
+    print("---------------------------")
+
+
+if __name__ == "__main__":
+    main()

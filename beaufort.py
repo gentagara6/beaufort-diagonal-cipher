@@ -19,21 +19,10 @@ def encrypt_beaufort(text,key):
         ciphertext.append(chr(c + ord('A')))
     return "".join(ciphertext)
 
-if __name__=="__main__":
-    plaintext="HELLO WORLD"
-    key="KEY"
-    print("Beaufort Cipher Demo")
-    print(f"Plaintext  : {plaintext}")
-    print(f"Key        : {key}")
-    encrypted =encrypt_beaufort(plaintext,key)
-    print(f"Beaufort   : {encrypted}")
-
-
-def dekriptimi_beaufort(ciphertext, key):
+def decrypt_beaufort(ciphertext, key):
     
     plaintext = ""
-
-    ciphertext = ciphertext.upper()
+    ciphertext = prepare_text(ciphertext)
     key = key.upper()
 
     key_index = 0  
@@ -53,24 +42,29 @@ def dekriptimi_beaufort(ciphertext, key):
 
     return plaintext
 
-
 def main():
-    print("--- Moduli i Dekriptimit Beaufort ---")
+    print("=== Beaufort Cipher ===")
+    print("1. Encrypt")
+    print("2. Decrypt")
 
-    teksti = input("Shkruani tekstin per dekriptim: ")
-    celesi = input("Shkruani celesin: ")
+    choice = input("Zgjedh opsionin (1/2): ")
 
-    if not celesi.isalpha():
-        print("Gabim: Celesi duhet te permbaje vetem shkronja!")
-        return
+    text = input("Shkruaj tekstin: ")
+    key = input("Shkruaj celesin: ")
 
-    rezultati = dekriptimi_beaufort(teksti, celesi)
+    if not key or not key.isalpha():
+     print("Gabim: Celesi duhet vetem me shkronja!")
+     return
 
-    print("\n---------------------------")
-    print(f"Teksti i shifruar: {teksti}")
-    print(f"Celesi i perdorur: {celesi}")
-    print(f"Teksti i dekriptuar: {rezultati}")
-    print("---------------------------")
+    if choice == "1":
+        result = encrypt_beaufort(text, key)
+        print(f"\nEncrypted: {result}")
+    elif choice == "2":
+        result = decrypt_beaufort(text, key)
+        print(f"\nDecrypted: {result}")
+    else:
+        print("Opsion i pavlefshem!")
+
 
 
 if __name__ == "__main__":

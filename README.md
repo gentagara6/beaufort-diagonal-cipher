@@ -81,3 +81,32 @@ Teksti i shifruar: DANZQ
 Autori:
 •Emri:Florentina Dervishaj
 
+
+Diagonal Transposition Cipher
+
+Përshkrimi:
+Ky është një algoritëm transpozimi ku teksti vendoset në një matricë me kolona të caktuara dhe më pas lexohet në mënyrë diagonale për të krijuar ciphertext.
+
+Enkriptimi
+Hapat:
+1.Teksti pastrohet:
+- hiqen hapësirat
+- konvertohet në shkronja të mëdha (uppercase)
+2.Zgjidhet numri i kolonave (cols)
+3.Teksti vendoset në një matricë rresht pas rreshti
+4.Nëse teksti nuk mbush matricën plotësisht:
+- shtohen karaktere mbushëse (zakonisht X)
+5.Teksti lexohet diagonalisht nga matrica për të krijuar ciphertext.
+
+Shembull:
+
+Teksti: HELLO
+Kolonat: 3
+
+Matrica:
+H E L
+L O X
+
+Leximi diagonal: H → E L → L O → X
+
+Ciphertext: HLEOLX

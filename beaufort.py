@@ -42,30 +42,30 @@ def decrypt_beaufort(ciphertext, key):
 
     return plaintext
 
-def main():
-    print("=== Beaufort Cipher ===")
-    print("1. Encrypt")
-    print("2. Decrypt")
+# def main():
+#     print("=== Beaufort Cipher ===")
+#     print("1. Encrypt")
+#     print("2. Decrypt")
 
-    choice = input("Zgjedh opsionin (1/2): ")
+#     choice = input("Zgjedh opsionin (1/2): ")
 
-    text = input("Shkruaj tekstin: ")
-    key = input("Shkruaj celesin: ")
+#     text = input("Shkruaj tekstin: ")
+#     key = input("Shkruaj celesin: ")
 
-    if not key or not key.isalpha():
-     print("Gabim: Celesi duhet vetem me shkronja!")
-     return
+#     if not key or not key.isalpha():
+#      print("Gabim: Celesi duhet vetem me shkronja!")
+#      return
 
-    if choice == "1":
-        result = encrypt_beaufort(text, key)
-        print(f"\nEncrypted: {result}")
-    elif choice == "2":
-        result = decrypt_beaufort(text, key)
-        print(f"\nDecrypted: {result}")
-    else:
-        print("Opsion i pavlefshem!")
+#     if choice == "1":
+#         result = encrypt_beaufort(text, key)
+#         print(f"\nEncrypted: {result}")
+#     elif choice == "2":
+#         result = decrypt_beaufort(text, key)
+#         print(f"\nDecrypted: {result}")
+#     else:
+#         print("Opsion i pavlefshem!")
 
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

@@ -1,5 +1,5 @@
 from beaufort import encrypt_beaufort, decrypt_beaufort
-from diagonal import encrypt_diagonal #, decrypt_diagonal
+from diagonal import encrypt_diagonal, decrypt_diagonal
 
 def menu():
     print("\n=== Beaufort and Diagonal Transposition Cipher ===")
@@ -40,8 +40,8 @@ def main():
 
             if choice == "3":
                 print("Encrypted:", encrypt_diagonal(text, cols))
-            # else:
-                # print("Decrypted:", decrypt_diagonal(text, cols))
+            else:
+                print("Decrypted:", decrypt_diagonal(text, cols))
 
         elif choice == "0":
             print("Exiting program...")

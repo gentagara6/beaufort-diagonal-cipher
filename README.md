@@ -69,3 +69,36 @@ L O X
 Leximi diagonal: H → E L → L O → X
 
 Ciphertext: HLEOLX
+
+
+Dekriptimi
+
+Përshkrimi:
+Dekriptimi ne Diagonal Transposition Cipher është procesi i rikthimit të tekstit origjinal nga ciphertext duke përdorur të njëjtin numër kolonash që është përdorur gjatë enkriptimit.
+Ky proces është i kundërti i enkriptimit: matrica mbushet në mënyrë diagonale dhe më pas lexohet rresht pas rreshti.
+
+Hapat:
+1. Merret ciphertext dhe numri i kolonave (cols)
+2. Llogaritet numri i rreshtave:
+	- rows = ceil(len(ciphertext)/cols)
+3. Krijohet një matricë bosh
+4. Matrica mbushet diagonalisht me tekstin e koduar
+5. Teksti lexohet normalisht:
+	- rresht pas rreshti(majtas -> djathtas)
+6. Hiqen karakteret mbushëse (X) në fund
+
+Shembull:
+Ciphertext: HLEOLX
+Kolonat: 3
+
+Matrica (pas mbushjes diagonale):
+	H E L
+	L O X
+Rezultati:
+	HELLO
+
+Shënim:
+- Gjatë enkriptimit shtohen karaktere X për të plotësuar matricën
+- Gjatë dekriptimit këto karaktere hiqen
+- Teksti përpunohet pa hapsira
+

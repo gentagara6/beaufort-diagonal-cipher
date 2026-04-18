@@ -2,9 +2,8 @@ import math
 
 def pad_text(text, cols):
     text = text.replace(" ", "")
-    while len(text) % cols != 0:
-        text += 'X'
-    return text
+    rows = math.ceil(len(text) / cols)
+    return text + "X" * (rows * cols - len(text))
 
 
 def create_matrix(text, cols):
@@ -20,30 +19,29 @@ def create_matrix(text, cols):
             row.append(text[index])
             index += 1
         matrix.append(row)
+        
     return matrix
 
 
 def encrypt_diagonal(text, cols):
     matrix = create_matrix(text, cols)
-
     rows = len(matrix)
-    cols = len(matrix[0]) 
 
     result = []
 
-    for start_col in range(cols):
-        i, j = 0, start_col
-        while i < rows and j >= 0:
+    for col_start in range(cols):
+        i, j = 0, col_start
+        while i < rows and j < cols:
             result.append(matrix[i][j])
             i += 1
-            j -= 1
+            j += 1
 
-    for start_row in range(1, rows):
-        i, j = start_row, cols - 1
-        while i < rows and j >= 0:
+    for row_start in range(1, rows):
+        i, j = row_start, 0
+        while i < rows and j < cols:
             result.append(matrix[i][j])
             i += 1
-            j -= 1
+            j += 1
 
     return "".join(result)
 
@@ -51,27 +49,24 @@ def decrypt_diagonal(ciphertext, cols):
     length = len(ciphertext)
     rows = math.ceil(length/cols)
 
-    matrix = [[''for _ in range(cols)]for _ in range(rows)]
-
+    matrix = [[None for _ in range(cols)] for _ in range(rows)]
     index = 0
 
-    for start_col in range(cols):
-        i,j = 0, start_col
-        while i< rows and j >= 0:
-            if index < length:
-                matrix[i][j] = ciphertext[index]
-                index += 1
+    for col_start in range(cols):
+        i, j = 0, col_start
+        while i < rows and j < cols:
+            matrix[i][j] = ciphertext[index]
+            index += 1
             i += 1
-            j -= 1
+            j += 1
 
-    for start_row in range(1, rows):
-        i,j = start_row, cols - 1
-        while i < rows and j >= 0:
-            if index < length:
-                matrix[i][j] = ciphertext[index]
-                index += 1
+    for row_start in range(1, rows):
+        i,j = row_start, 0
+        while i < rows and j < cols:
+            matrix[i][j] = ciphertext[index]
+            index += 1
             i += 1
-            j -= 1
+            j += 1
     
     plaintext = ""
     for row in matrix:

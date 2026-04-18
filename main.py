@@ -2,7 +2,7 @@ from beaufort import encrypt_beaufort, decrypt_beaufort
 from diagonal import encrypt_diagonal, decrypt_diagonal
 
 def menu():
-    print("\n=== Beaufort and Diagonal Transposition Cipher ===")
+    print("\n-- Beaufort dhe Diagonal Transposition Cipher --")
     print("1. Beaufort Encrypt")
     print("2. Beaufort Decrypt")
     print("3. Diagonal Encrypt")

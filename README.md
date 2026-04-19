@@ -50,14 +50,21 @@ A = 0, B = 1, ..., Z = 25
 
 Shembull ekzekutimi
 
-Input:
-Teksti: HELLO
-Celesi: KEY
+-- Beaufort dhe Diagonal Transposition Cipher --
+1. Beaufort Encrypt
+2. Beaufort Decrypt
+3. Diagonal Encrypt
+4. Diagonal Decrypt
+0. Exit
+Zgjedh opsionin: 1
+Text: HELLO
+Key: KEY
+Encrypted: DANZQ
 
-Output:
-Teksti i enkriptuar: DANZQ
-Celesi i perdorur: KEY
-Teksti i dekriptuar: HELLO
+Zgjedh opsionin: 2
+Text: DANZQ
+Key: KEY
+Decrypted: HELLO
 
 Veçoritë:
 	• Punon vetëm me shkronja A–Z 
@@ -80,19 +87,18 @@ Hapat:
 4.Nëse është e nevojshme, shtohen karaktere mbushëse (X)
 5.Teksti lexohet diagonalisht nga matrica për të krijuar ciphertext.
 
-Shembull
+Shembull ekzekutimi
 
-Teksti: HELLO
-Kolonat: 2
-
-Matrica:
-H E 
-L L 
-O X
-
-Leximi diagonal: HL → E → L X → O
-
-Ciphertext: HLELXO
+-- Beaufort dhe Diagonal Transposition Cipher --
+1. Beaufort Encrypt
+2. Beaufort Decrypt
+3. Diagonal Encrypt
+4. Diagonal Decrypt
+0. Exit
+Zgjedh opsionin: 3
+Text: HELLO
+Columns: 2
+Encrypted: HLELXO
 
 
 Dekriptimi
@@ -109,17 +115,12 @@ Hapat:
 	- rresht pas rreshti(majtas -> djathtas)
 6. Hiqen karakteret mbushëse (X) në fund
 
-Shembull
+Shembull ekzekutimi
 
-Ciphertext: HLELXO
-Kolonat: 2
-
-Matrica (pas mbushjes diagonale):
-	H E 
-	L L 
-	O X
-Rezultati:
-	HELLO
+Zgjedh opsionin: 4
+Text: HLELXO
+Columns: 2
+Decrypted: HELLO
 
 Shënim:
 - Gjatë enkriptimit shtohen karaktere X për të plotësuar matricën

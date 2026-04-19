@@ -56,29 +56,29 @@ A = 0, B = 1, ..., Z = 25
 
 #### Shembull ekzekutimi
 
+```md
 -- Beaufort dhe Diagonal Transposition Cipher --
 1. Beaufort Encrypt
 2. Beaufort Decrypt
 3. Diagonal Encrypt
 4. Diagonal Decrypt
 0. Exit
-
 Zgjedh opsionin: 1
-
 Text: HELLO
-
 Key: KEY
-
 Encrypted: DANZQ
 
-
+-- Beaufort dhe Diagonal Transposition Cipher --
+1. Beaufort Encrypt
+2. Beaufort Decrypt
+3. Diagonal Encrypt
+4. Diagonal Decrypt
+0. Exit
 Zgjedh opsionin: 2
-
 Text: DANZQ
-
 Key: KEY
-
 Decrypted: HELLO
+```
 
 #### Veçoritë:
 
@@ -106,21 +106,18 @@ Hapat:
 
 #### Shembull ekzekutimi
 
+```md
 -- Beaufort dhe Diagonal Transposition Cipher --
 1. Beaufort Encrypt
 2. Beaufort Decrypt
 3. Diagonal Encrypt
 4. Diagonal Decrypt
 0. Exit
-
 Zgjedh opsionin: 3
-
 Text: HELLO
-
 Columns: 2
-
 Encrypted: HLELXO
-
+```
 
 #### Dekriptimi
 
@@ -139,16 +136,20 @@ Hapat:
 
 #### Shembull ekzekutimi
 
+```md
+-- Beaufort dhe Diagonal Transposition Cipher --
+1. Beaufort Encrypt
+2. Beaufort Decrypt
+3. Diagonal Encrypt
+4. Diagonal Decrypt
+0. Exit
 Zgjedh opsionin: 4
-
 Text: HLELXO
-
 Columns: 2
-
 Decrypted: HELLO
+```
 
 #### Shënim:
-
 - Gjatë enkriptimit shtohen karaktere X për të plotësuar matricën
 - Gjatë dekriptimit këto karaktere hiqen
 - Teksti përpunohet pa hapsira

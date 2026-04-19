@@ -1,20 +1,21 @@
-# Përshkrimi i Projektit
+# Beaufort & Diagonal Transposition Cipher
+
+## Përshkrimi i Projektit
 
 Ky projekt implementon dy algoritme të kriptografisë:
 
-• Beaufort Cipher
-
-• Diagonal Transposition Cipher
+- Beaufort Cipher
+- Diagonal Transposition Cipher
 
 Programi është i ndarë në tre pjesë:
 
-• beaufort.py → përmban enkriptimin dhe dekriptimin Beaufort
-• diagonal.py → përmban enkriptimin dhe dekriptimin diagonal
-• main.py → programi kryesor që lejon përdoruesin të zgjedhë algoritmin dhe operacionin
+- beaufort.py → përmban enkriptimin dhe dekriptimin Beaufort
+- diagonal.py → përmban enkriptimin dhe dekriptimin diagonal
+- main.py → programi kryesor që lejon përdoruesin të zgjedhë algoritmin dhe operacionin
 
-# Si të ekzekutohet programi
+## Si të ekzekutohet programi
 1. Kërkesat
-	• Python 3 i instaluar
+	- Python 3 i instaluar
 2. Hapat
 	1. Klono repository:
 	   git clone https://github.com/gentagara6/beaufort-diagonal-cipher.git
@@ -23,7 +24,7 @@ Programi është i ndarë në tre pjesë:
 	3. Ekzekuto programin:
 	   python main.py
 
-Çfarë ndodh pas ekzekutimit
+#### Çfarë ndodh pas ekzekutimit
 
 Programi shfaq menunë:
 1. Beaufort Encrypt
@@ -34,14 +35,14 @@ Programi shfaq menunë:
 
 Përdoruesi zgjedh opsionin dhe fut inputet përkatëse.
 
-# Algoritmet e implementuara:
+## Algoritmet e implementuara:
 
-1. Beaufort Cipher 
+### 1. Beaufort Cipher 
 
 Beaufort Cipher është një algoritëm klasik kriptografik që përdor një çelës për të transformuar tekstin e lexueshëm (plaintext) në tekst të koduar (ciphertext) dhe anasjelltas.
 Është një algoritëm reciprok (simetrik), që do të thotë se e njëjta formulë matematikore përdoret si për enkriptim ashtu edhe për dekriptim.
 
-Si funksionon algoritmi
+#### Si funksionon algoritmi
 
 Formula e përdorur është:
 C = (K − M) mod 26
@@ -53,7 +54,7 @@ Ku:
 Çdo shkronjë konvertohet në një numër:
 A = 0, B = 1, ..., Z = 25
 
-Shembull ekzekutimi
+#### Shembull ekzekutimi
 
 -- Beaufort dhe Diagonal Transposition Cipher --
 1. Beaufort Encrypt
@@ -79,7 +80,7 @@ Key: KEY
 
 Decrypted: HELLO
 
-Veçoritë:
+#### Veçoritë:
 
 	• Punon vetëm me shkronja A–Z 
 	• Hapësirat dhe karakteret e tjera nuk ndryshohen 
@@ -88,24 +89,22 @@ Veçoritë:
 	• Përdor operacionin modulo 26 për kriptim
 
 
-2. Diagonal Transposition Cipher
+### 2. Diagonal Transposition Cipher
 
 Ky është një algoritëm transpozimi ku teksti vendoset në një matricë me kolona të caktuara dhe më pas lexohet në mënyrë diagonale për të krijuar ciphertext.
 
-Enkriptimi
+#### Enkriptimi
 
 Hapat:
-
 1. Teksti pastrohet:
-
-- hiqen hapësirat
-- konvertohet në shkronja të mëdha (uppercase)
+	- hiqen hapësirat
+	- konvertohet në shkronja të mëdha (uppercase)
 2. Zgjidhet numri i kolonave (cols)
 3. Teksti vendoset në një matricë rresht pas rreshti
 4. Nëse është e nevojshme, shtohen karaktere mbushëse (X)
 5. Teksti lexohet diagonalisht nga matrica për të krijuar ciphertext.
 
-Shembull ekzekutimi
+#### Shembull ekzekutimi
 
 -- Beaufort dhe Diagonal Transposition Cipher --
 1. Beaufort Encrypt
@@ -123,13 +122,12 @@ Columns: 2
 Encrypted: HLELXO
 
 
-Dekriptimi
+#### Dekriptimi
 
 Dekriptimi ne Diagonal Transposition Cipher është procesi i rikthimit të tekstit origjinal nga ciphertext duke përdorur të njëjtin numër kolonash që është përdorur gjatë enkriptimit.
 Ky proces është i kundërti i enkriptimit: matrica mbushet në mënyrë diagonale dhe më pas lexohet rresht pas rreshti.
 
 Hapat:
-
 1. Merret ciphertext dhe numri i kolonave (cols)
 2. Llogaritet numri i rreshtave:
 	- rows = ceil(len(ciphertext)/cols)
@@ -139,7 +137,7 @@ Hapat:
 	- rresht pas rreshti(majtas -> djathtas)
 6. Hiqen karakteret mbushëse (X) në fund
 
-Shembull ekzekutimi
+#### Shembull ekzekutimi
 
 Zgjedh opsionin: 4
 
@@ -149,7 +147,7 @@ Columns: 2
 
 Decrypted: HELLO
 
-Shënim:
+#### Shënim:
 
 - Gjatë enkriptimit shtohen karaktere X për të plotësuar matricën
 - Gjatë dekriptimit këto karaktere hiqen
